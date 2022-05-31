@@ -8,6 +8,8 @@
 		[TestMethod]
 		public void Leading0s()
 		{
+			// see https://docs.nanoframework.net/content/architecture/simplifications-and-trade-offs.html#stringformat-and-numerictostring-functions
+			
 			int i = 2;
 			Assert.Equal("000", $"{i:000}"); // desired would be "002"
 			Assert.Equal("002", $"{i.ToString().PadLeft(3, '0')}"); // workaround
